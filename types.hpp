@@ -1,3 +1,5 @@
+#pragma once
+
 #include <blaze/math/StaticMatrix.h>
 #include <blaze/math/DynamicMatrix.h>
 
