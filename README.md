@@ -17,8 +17,10 @@ you can do.  We have just a few requirements:
 
 * The project must be written in C++.  Python would be way easier if all we
   wanted to see was a solved algorithm, but actually we are just as interested
-in your ability to engineer total software systems as your ability to innovate a
-novel algorithm.
+in your ability to engineer total software systems as your ability to innovate
+a novel algorithm.  If you want to make plots or other numerical analysis for
+any reason, you may use Python or other suitable language for that purpose, but
+keep the main computation in C++.
 
 * To get the skeleton and your solution to compile, you will have to show
   enough Linux chops (using the distribution of your choice) to get some
@@ -82,4 +84,6 @@ of your education and experience.
 * Unit tests - use a framework of your choice (such as Boost Test, Google Test, Catch, or Mettle).  Given the limited time, providing just a few tests in a workflow is almost as good as acheiving high coverage (which takes much longer).
 * Use commonly available engineering tools to prove that the software lacks memory leaks, race conditions (if using threads), and/or identify performance bottlenecks (profiling).
 * Critique of the framework we provided, bug fixes, feature enhancements, or performance optimizations.
-* If you end up writing other images that helped you debug or develop the project, we will look at those too to further understand what you did
+* If you end up writing other images, plots, or profiling results that helped
+  you debug or develop the project, we will look at those too to further
+understand what you did.
