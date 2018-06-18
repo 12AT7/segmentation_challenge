@@ -3,7 +3,9 @@
 This is a take home computer vision exercise that we are using to evaluate
 candidates for fitting into our Algorithms team.  The challenge is deliberately
 open ended, to minimize our preconceptions about the technical backgrounds of
-engineers that might succeed with us.
+engineers that might succeed with us.  To solve the challenge, you must choose
+a specific topic that fits your technical background, and show us something
+interesting that you investigated using your own self direction.
 
 ## Requirements:
 
@@ -61,6 +63,9 @@ problem, but are instead looking at style, correctness, and knowledge of
 asyncronous programming and standard libraries.
 * Clever ideas to achieve high test coverage, which is challenging for numerical software
 * Integrate the project on CircleCI or other continuous integration service
+* Vary the image size and object density, and measure the timing of your
+  calculation, to demonstrate scaling performance.  If you make the images
+large enough, you should be able to detect your computer's cache size.
 * Any other related high performance computing topic that you find interesting and shows off your strengths
 
 ## Workflow Demonstration
