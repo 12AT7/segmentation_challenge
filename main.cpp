@@ -14,6 +14,7 @@ int main(int argc, char* argv[])
     };
 
     mask_image image(512, 449);
+    image.accumulate_noise();
     image.accumulate_masks(masks);
     write_png(image, "masks.png");
 }
