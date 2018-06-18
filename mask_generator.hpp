@@ -3,6 +3,24 @@
 #include "types.hpp"
 #include <functional>
 
+namespace shape {
+
+    // Define primitive shapes by predicates that check if a particular
+    // homogeneous coordinate is inside the shape or not.  These should be unit
+    // circles, unit squares, and such.  The class mask_generator, defined
+    // below, will shift and scale these shapes into useful tests with
+    // arbitrary linear transforms.
+
+    struct circle {
+        bool operator()(homogeneous_coordinate loc) { return (loc[0]*loc[0] + loc[1]*loc[1] < 1); }
+    };
+
+    struct square {
+        bool operator()(homogeneous_coordinate loc) { return fabs(loc[0]) <= 1 and fabs(loc[1]) <= 1; }
+    };
+
+} // namespace shape
+
 class mask_generator {
 public:
 
@@ -75,6 +93,10 @@ public:
 
 private:
 
+    // Keep the homogeneous transform m_forward around, because this is the
+    // matrix that accumulates a whole series of individual transforms like
+    // shifting, rotating, and scaling, as they are added.  After each update,
+    // m_inverse is computed from m_forward, and ready for use in operator().
     homogeneous_transform m_forward {
         { 1, 0, 0 },
         { 0, 1, 0 },
@@ -82,10 +104,14 @@ private:
     };
     homogeneous_transform m_inverse;
 
-    // m_is_inside() is a predicate that tests containment of a pixel inside a
-    // normalized shape prototoype, such as the unit circle or unit square.
+    // Store the prototype shape as a function that checks an arbitrary
+    // coordinate for membership.
     std::function<bool (homogeneous_coordinate)> m_is_inside;
 
+    // The homogeneous transforms m_forward and m_inverse are private, and can
+    // only be manipulated by public member functions which eventually call
+    // chain_transform().  This ensures that m_forward and m_inverse are always
+    // synchronized.
     mask_generator& chain_transform(const homogeneous_transform& A)
     {
         m_forward = A*m_forward;
@@ -94,17 +120,5 @@ private:
         return *this;
     }
 };
-
-namespace shape {
-
-     struct circle {
-         bool operator()(homogeneous_coordinate loc) { return (loc[0]*loc[0] + loc[1]*loc[1] < 1); }
-     };
-
-     struct square {
-         bool operator()(homogeneous_coordinate loc) { return fabs(loc[0]) <= 1 and fabs(loc[1]) <= 1; }
-     };
-
-} // namespace shape
 
 
