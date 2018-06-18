@@ -26,7 +26,7 @@ keep the main computation in C++.
   enough Linux chops (using the distribution of your choice) to get some
 dependencies installed, invoke a sufficiently modern C++ compiler, link, and
 run.  The minimum dependencies are Boost, Blaze (a linear algebra library), and
-OpenImageIO (used to write images).
+LibPNG.
 
 * Return the results to us by forking this repository into your own Github or
   other online service and committing your changes there.
@@ -48,6 +48,7 @@ both can get the job done.
 * Detect shapes in the synthetic mask image using any standard computer vision algorithm.
 * Compute morphological feature vectors from the segmented shapes, and classify into
   categories such as `square` and `circle` using an algorithm of your choice.
+* Add more shapes until they overlap; can you detect and classify colliding shapes as neither squares nor circles?
 * Investigate the performance and degradations of the algorithm as the noise and shape density are varied.
 * Any other related quantitative investigation that you find interesting and shows off your strengths
 
