@@ -28,8 +28,10 @@ dependencies installed, invoke a sufficiently modern C++ compiler, link, and
 run.  The minimum dependencies are Boost, Blaze (a linear algebra library), and
 LibPNG.
 
-* Return the results to us by forking this repository into your own Github or
-  other online service and committing your changes there.
+* Return the results to us by cloning this repository, configuring a new
+  remote into your own Github or other online service, and committing your
+changes there.  Please do not fork, because that will allow other candidates to
+see who you are by looking at Github.
 
 ## Suitable Topics
 
@@ -88,3 +90,16 @@ of your education and experience.
 * If you end up writing other images, plots, or profiling results that helped
   you debug or develop the project, we will look at those too to further
 understand what you did.
+
+## Questions and Hints
+
+We want to see your strengths, and not get stuck on issues that do not
+contribute to your main investigation.  If have questions, or have found a bug
+or problem with our challenge, then please reach out to get it resolved or
+worked around.  Getting blocked on unintended snags does not help either of us
+evaluate your skills.
+
+Furthermore, if you just want some help over an early hurdle so you can focus
+on something else, reach out for that too.  We can provide things like
+`CMakeLists.txt`, or simple algorithms, to help you get engaged on some
+specific topic more quickly.
