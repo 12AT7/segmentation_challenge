@@ -16,7 +16,7 @@ void write_png(const image_type& image, boost::filesystem::path path)
     png_infop info = png_create_info_struct(png);
     if (!info) {
         png_destroy_write_struct(&png, NULL);
-        throw std::runtime_error("cannot allocate PNG context");
+        throw std::runtime_error("cannot allocate PNG info structure");
     }
 
     png_init_io(png, file);
@@ -46,6 +46,7 @@ void write_png(const image_type& image, boost::filesystem::path path)
 
     png_write_png(png, info, PNG_TRANSFORM_SWAP_ENDIAN, nullptr);
     png_destroy_write_struct(&png, &info);
+    fclose(file);
 }
 
 
